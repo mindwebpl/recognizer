@@ -1,0 +1,21 @@
+{
+    "name": "mindweb/recognizer",
+    "description": "",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marcin Czołnowski",
+            "email": "marcin@czolnowski.net"
+        }
+    ],
+    "require": {
+        "symfony/event-dispatcher": "~2.3,<2.7",
+        "symfony/http-foundation": "~2.3,<2.7"
+    },
+    "autoload": {
+        "psr-0": {
+            "Mindweb\\Recognizer\\": "src"
+        }
+    }
+}
