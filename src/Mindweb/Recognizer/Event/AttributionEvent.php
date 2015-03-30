@@ -38,7 +38,22 @@ class AttributionEvent extends Event
      */
     public function attribute($key, $value)
     {
-        $this->attribution[$key] = $value;
+        $path = explode('.', $key);
+        $current = &$this->attribution;
+
+        while ($index = array_shift($path)) {
+            if (!isset($current[$index])) {
+                $current[$index] = array();
+            } elseif (!is_array($current[$index])) {
+                $current[$index] = array(
+                    $current[$index]
+                );
+            }
+
+            $current = &$current[$index];
+        }
+
+        $current = $value;
     }
 
     /**
