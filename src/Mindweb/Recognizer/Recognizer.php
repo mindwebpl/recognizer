@@ -2,6 +2,7 @@
 namespace Mindweb\Recognizer;
 
 use Mindweb\Subscriber\Subscriber;
+use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 abstract class Recognizer implements Subscriber
 {
@@ -23,6 +24,14 @@ abstract class Recognizer implements Subscriber
         return array(
             array('recognize', $this->getPriority())
         );
+    }
+
+    /**
+     * @return null|ConfigurationInterface
+     */
+    public function getConfiguration()
+    {
+        return null;
     }
 
     /**
