@@ -1,13 +1,29 @@
 <?php
 namespace Mindweb\Recognizer;
 
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Mindweb\Subscriber\Subscriber;
 
-abstract class Recognizer implements EventSubscriberInterface
+abstract class Recognizer implements Subscriber
 {
     const RECOGNIZE_EVENT = 'tracker.recognize';
 
-    const DEFAULT_PRIORITY = 10;
+    /**
+     * @return string
+     */
+    public final function getEventName()
+    {
+        return self::RECOGNIZE_EVENT;
+    }
+
+    /**
+     * @return array
+     */
+    public function register()
+    {
+        return array(
+            array('recognize', $this->getPriority())
+        );
+    }
 
     /**
      * @param Event\AttributionEvent $attributionEvent
@@ -17,21 +33,8 @@ abstract class Recognizer implements EventSubscriberInterface
     /**
      * @return int
      */
-    public static function getPriority()
+    protected function getPriority()
     {
-        return self::DEFAULT_PRIORITY;
-    }
-
-    /**
-     * @inherited
-     */
-    public static function getSubscribedEvents()
-    {
-        return array(
-            self::RECOGNIZE_EVENT => array(
-                'recognize',
-                self::getPriority()
-            )
-        );
+        return 10;
     }
 } 
