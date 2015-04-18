@@ -35,6 +35,13 @@ abstract class Recognizer implements Subscriber
     }
 
     /**
+     * @param array $configuration
+     */
+    public function initialize(array $configuration = array())
+    {
+    }
+
+    /**
      * @param Event\AttributionEvent $attributionEvent
      */
     abstract public function recognize(Event\AttributionEvent $attributionEvent);

@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mindwebpl/subscriber.git",
-                "reference": "b39c00be983f133c45e9776b20dc5727cdde8f1c"
+                "reference": "829cfcbbcb11d1b52728993b1e5c927b984be3ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mindwebpl/subscriber/zipball/b39c00be983f133c45e9776b20dc5727cdde8f1c",
-                "reference": "b39c00be983f133c45e9776b20dc5727cdde8f1c",
+                "url": "https://api.github.com/repos/mindwebpl/subscriber/zipball/829cfcbbcb11d1b52728993b1e5c927b984be3ac",
+                "reference": "829cfcbbcb11d1b52728993b1e5c927b984be3ac",
                 "shasum": ""
             },
             "require": {
@@ -39,7 +39,7 @@
                     "email": "marcin@czolnowski.net"
                 }
             ],
-            "time": "2015-04-04 14:47:26"
+            "time": "2015-04-18 16:28:54"
         },
         {
             "name": "symfony/config",
